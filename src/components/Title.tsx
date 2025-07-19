@@ -1,5 +1,4 @@
 import { styled } from "@stitches/react";
-import { Divider } from "antd";
 
 const Layout = styled("div", {
   width: "100%",
@@ -53,7 +52,7 @@ const Schedule = styled("p", {
 });
 
 type TitleProps = {
-  data?: Data;
+  data?: any;
 };
 
 export default function Title({ data }: TitleProps) {

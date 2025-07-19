@@ -1,10 +1,18 @@
 import { styled } from "@stitches/react";
 import { Divider } from "antd";
+import {
+  ReactElement,
+  JSXElementConstructor,
+  ReactNode,
+  ReactPortal,
+  AwaitedReactNode,
+  Key,
+} from "react";
 
 const Wrapper = styled("div", {
-  background: "#efebe9",
-  backgroundImage: "url(./assets/GroovePaper.png)",
   width: "100%",
+  background: "#f8f9fa",
+  padding: "30px 0",
 });
 
 const Title = styled("p", {
@@ -33,7 +41,7 @@ const GroomBride = styled("p", {
 });
 
 type GrettingProps = {
-  data?: Data;
+  data?: any;
 };
 
 export default function Gretting({ data }: GrettingProps) {
@@ -43,21 +51,38 @@ export default function Gretting({ data }: GrettingProps) {
         <Title>결혼합니다</Title>
       </Divider>
       <Content>
-        {data?.gretting?.split("\n")?.map((value, index) => {
-          return (
-            <div key={index}>
-              {value}
-              <br />
-            </div>
-          );
-        })}
+        {data?.gretting
+          ?.split("\n")
+          ?.map(
+            (
+              value:
+                | string
+                | number
+                | bigint
+                | boolean
+                | ReactElement<any, string | JSXElementConstructor<any>>
+                | Iterable<ReactNode>
+                | ReactPortal
+                | Promise<AwaitedReactNode>
+                | null
+                | undefined,
+              index: Key | null | undefined
+            ) => {
+              return (
+                <div key={index}>
+                  {value}
+                  <br />
+                </div>
+              );
+            }
+          )}
       </Content>
       <GroomBride>
         {data?.groom?.parents?.father?.name} ·{" "}
         {data?.groom?.parents?.mother?.name}의 장남 {data?.groom?.name}
         <br />
         {data?.bride?.parents?.father?.name} ·{" "}
-        {data?.bride?.parents?.mother?.name}의 장녀 {data?.bride?.name}
+        {data?.bride?.parents?.mother?.name}의 차녀 {data?.bride?.name}
       </GroomBride>
     </Wrapper>
   );

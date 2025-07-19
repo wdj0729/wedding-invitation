@@ -1,12 +1,15 @@
-import ImageGallery from "react-image-gallery";
 import { Divider } from "antd";
-import { styled } from "@stitches/react";
-import "react-image-gallery/styles/css/image-gallery.css";
+import { createStitches } from "@stitches/react";
+
+export const { styled, css, theme, createTheme, globalCss } = createStitches({
+  media: {
+    sm: "(max-width: 640px)", // ✅ 여기 확인
+  },
+});
 
 const Wrapper = styled("div", {
-  background: "#efebe9",
-  backgroundImage: "url(./assets/GroovePaper.png)",
   width: "100%",
+  padding: "30px 0 60px 0",
 });
 
 const Title = styled("p", {
@@ -16,30 +19,57 @@ const Title = styled("p", {
   marginBottom: 0,
 });
 
+const GridWrapper = styled("div", {
+  display: "grid",
+  gap: 16,
+  justifyItems: "center",
+  gridTemplateColumns: "repeat(4, 1fr)",
+
+  "@sm": {
+    gridTemplateColumns: "repeat(2, 1fr)",
+  },
+});
+
 const images = [
   {
-    original: "./assets/Gallery_Photo_1.png",
-    thumbnail: "./assets/Gallery_Photo_1.png",
+    original: "./assets/Gallery_Photo_1.jpg",
+    thumbnail: "./assets/Gallery_Photo_1.jpg",
   },
   {
-    original: "./assets/Gallery_Photo_2.png",
-    thumbnail: "./assets/Gallery_Photo_2.png",
+    original: "./assets/Gallery_Photo_2.jpg",
+    thumbnail: "./assets/Gallery_Photo_2.jpg",
   },
   {
-    original: "./assets/Gallery_Photo_3.png",
-    thumbnail: "./assets/Gallery_Photo_3.png",
+    original: "./assets/Gallery_Photo_3.jpg",
+    thumbnail: "./assets/Gallery_Photo_3.jpg",
   },
   {
-    original: "./assets/Gallery_Photo_4.png",
-    thumbnail: "./assets/Gallery_Photo_4.png",
+    original: "./assets/Gallery_Photo_4.jpg",
+    thumbnail: "./assets/Gallery_Photo_4.jpg",
   },
   {
-    original: "./assets/Gallery_Photo_5.png",
-    thumbnail: "./assets/Gallery_Photo_5.png",
+    original: "./assets/Gallery_Photo_5.jpg",
+    thumbnail: "./assets/Gallery_Photo_5.jpg",
   },
   {
-    original: "./assets/Gallery_Photo_6.png",
-    thumbnail: "./assets/Gallery_Photo_6.png",
+    original: "./assets/Gallery_Photo_6.jpg",
+    thumbnail: "./assets/Gallery_Photo_6.jpg",
+  },
+  {
+    original: "./assets/Gallery_Photo_7.jpg",
+    thumbnail: "./assets/Gallery_Photo_7.jpg",
+  },
+  {
+    original: "./assets/Gallery_Photo_8.jpg",
+    thumbnail: "./assets/Gallery_Photo_8.jpg",
+  },
+  {
+    original: "./assets/Gallery_Photo_9.jpg",
+    thumbnail: "./assets/Gallery_Photo_9.jpg",
+  },
+  {
+    original: "./assets/Gallery_Photo_10.jpg",
+    thumbnail: "./assets/Gallery_Photo_10.jpg",
   },
 ];
 
@@ -49,11 +79,21 @@ export default function Gallery() {
       <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
         <Title>우리의 아름다운 순간</Title>
       </Divider>
-      <ImageGallery
-        showPlayButton={false}
-        showFullscreenButton={false}
-        items={images}
-      />
+      <GridWrapper>
+        {images.map((img, idx) => (
+          <img
+            key={idx}
+            src={img.original}
+            alt={`갤러리 사진 ${idx + 1}`}
+            style={{
+              width: "100%",
+              objectFit: "cover",
+              borderRadius: 8,
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            }}
+          />
+        ))}
+      </GridWrapper>
     </Wrapper>
   );
 }

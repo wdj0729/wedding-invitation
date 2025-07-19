@@ -36,3 +36,14 @@ type Data = {
     share_image: string;
   };
 };
+
+// types/naver.d.ts
+declare global {
+  interface Window {
+    naver: any;
+  }
+
+  const naver: any;
+}
+
+export {};

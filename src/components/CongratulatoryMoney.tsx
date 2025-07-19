@@ -4,12 +4,13 @@ import { Button, Divider, Modal, message } from "antd";
 import { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 
+const ClipboardWrapper = CopyToClipboard as unknown as React.ComponentType<any>;
+
 const Wrapper = styled("div", {
-  background: "#efebe9",
-  backgroundImage: "url(./assets/GroovePaper.png)",
-  paddingBottom: 18,
   width: "100%",
   textAlign: "center",
+  background: "#f8f9fa",
+  padding: "30px 0",
 });
 
 const Title = styled("p", {
@@ -49,7 +50,7 @@ const ContactButton = styled("div", {
 });
 
 type CongratulatoryMoneyProps = {
-  data?: Data;
+  data?: any;
 };
 
 export default function CongratulatoryMoney({
@@ -93,7 +94,7 @@ export default function CongratulatoryMoney({
           <div>
             <b>부) {data?.groom?.parents?.father?.name}</b>
             <Divider type="vertical" />
-            <CopyToClipboard
+            <ClipboardWrapper
               text={data?.groom?.parents?.father?.account_number}
             >
               <Button
@@ -103,14 +104,16 @@ export default function CongratulatoryMoney({
               >
                 {data?.groom?.parents?.father?.account_number}
               </Button>
-            </CopyToClipboard>
+            </ClipboardWrapper>
           </div>
         )}
         {data?.groom?.parents?.mother && (
           <div style={{ marginTop: 24, marginBottom: 24 }}>
             <b>모) {data?.groom?.parents?.mother.name}</b>
             <Divider type="vertical" />
-            <CopyToClipboard text={data?.groom?.parents?.mother.account_number}>
+            <ClipboardWrapper
+              text={data?.groom?.parents?.mother.account_number}
+            >
               <Button
                 type="text"
                 style={{ padding: 0, margin: 0 }}
@@ -118,14 +121,14 @@ export default function CongratulatoryMoney({
               >
                 {data?.groom?.parents?.mother.account_number}
               </Button>
-            </CopyToClipboard>
+            </ClipboardWrapper>
           </div>
         )}
         {data?.groom && (
           <div>
             <b>신랑 {data?.groom?.name}</b>
             <Divider type="vertical" />
-            <CopyToClipboard text={data?.groom?.account_number}>
+            <ClipboardWrapper text={data?.groom?.account_number}>
               <Button
                 type="text"
                 style={{ padding: 0, margin: 0 }}
@@ -133,7 +136,7 @@ export default function CongratulatoryMoney({
               >
                 {data?.groom?.account_number}
               </Button>
-            </CopyToClipboard>
+            </ClipboardWrapper>
           </div>
         )}
         <div>
@@ -155,7 +158,7 @@ export default function CongratulatoryMoney({
           <div>
             <b>부) {data?.bride?.parents?.father?.name}</b>
             <Divider type="vertical" />
-            <CopyToClipboard
+            <ClipboardWrapper
               text={data?.bride?.parents?.father?.account_number}
             >
               <Button
@@ -165,14 +168,14 @@ export default function CongratulatoryMoney({
               >
                 {data?.bride?.parents?.father?.account_number}
               </Button>
-            </CopyToClipboard>
+            </ClipboardWrapper>
           </div>
         )}
         {data?.bride?.parents?.mother && (
           <div style={{ marginTop: 24, marginBottom: 24 }}>
             <b>모) {data?.bride?.parents?.mother?.name}</b>
             <Divider type="vertical" />
-            <CopyToClipboard
+            <ClipboardWrapper
               text={data?.bride?.parents?.mother?.account_number}
             >
               <Button
@@ -182,14 +185,14 @@ export default function CongratulatoryMoney({
               >
                 {data?.bride?.parents?.mother?.account_number}
               </Button>
-            </CopyToClipboard>
+            </ClipboardWrapper>
           </div>
         )}
         {data?.bride && (
           <div>
             <b>신부 {data?.bride?.name}</b>
             <Divider type="vertical" />
-            <CopyToClipboard text={data?.bride?.account_number}>
+            <ClipboardWrapper text={data?.bride?.account_number}>
               <Button
                 type="text"
                 style={{ padding: 0, margin: 0 }}
@@ -197,7 +200,7 @@ export default function CongratulatoryMoney({
               >
                 {data?.bride?.account_number}
               </Button>
-            </CopyToClipboard>
+            </ClipboardWrapper>
           </div>
         )}
         <div>
