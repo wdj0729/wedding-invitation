@@ -14,28 +14,28 @@ const Wrapper = styled("div", {
 });
 
 const Title = styled("p", {
-  fontSize: "2vh",
+  fontSize: "2.4vh",
   fontWeight: "bold",
   opacity: 0.85,
   marginBottom: 0,
 });
 
 const Content = styled("p", {
-  fontSize: "1.5vh",
+  fontSize: "2vh",
   lineHeight: 1.75,
   opacity: 0.75,
   marginBottom: 24,
 });
 
 const SubContent = styled("p", {
-  fontSize: "1.3vh",
+  fontSize: "1.8vh",
   lineHeight: 1.75,
   opacity: 0.75,
   marginBottom: 24,
 });
 
 const Description = styled("p", {
-  fontSize: "1.3vh",
+  fontSize: "1.4vh",
   lineHeight: 1.75,
   opacity: 0.65,
   marginTop: 8,
@@ -67,7 +67,7 @@ export default function CongratulatoryMoney({
       <Content>축하의 마음을 담아 축의금을 전달해 보세요.</Content>
       <ContactButton onClick={() => setGroomVisible(true)}>
         <CheckCircleTwoTone
-          style={{ fontSize: 64, marginBottom: 16 }}
+          style={{ fontSize: 48, marginBottom: 16 }}
           twoToneColor="#829fe0"
         />
         <br />
@@ -75,7 +75,7 @@ export default function CongratulatoryMoney({
       </ContactButton>
       <ContactButton onClick={() => setBrideVisible(true)}>
         <CheckCircleTwoTone
-          style={{ fontSize: 64, marginBottom: 16 }}
+          style={{ fontSize: 48, marginBottom: 16 }}
           twoToneColor="#fe7daf"
         />
         <br />
@@ -108,7 +108,7 @@ export default function CongratulatoryMoney({
           </div>
         )}
         {data?.groom?.parents?.mother && (
-          <div style={{ marginTop: 24, marginBottom: 24 }}>
+          <div style={{ margin: "16px 0" }}>
             <b>모) {data?.groom?.parents?.mother.name}</b>
             <Divider type="vertical" />
             <ClipboardWrapper
@@ -172,7 +172,7 @@ export default function CongratulatoryMoney({
           </div>
         )}
         {data?.bride?.parents?.mother && (
-          <div style={{ marginTop: 24, marginBottom: 24 }}>
+          <div style={{ margin: "16px 0" }}>
             <b>모) {data?.bride?.parents?.mother?.name}</b>
             <Divider type="vertical" />
             <ClipboardWrapper

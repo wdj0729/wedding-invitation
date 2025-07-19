@@ -33,13 +33,13 @@ const VideoBackground = styled("video", {
 });
 
 const WeddingInvitation = styled("p", {
-  fontSize: "1.5vh",
+  fontSize: "2vh",
   opacity: 0.45,
   marginBottom: 16,
 });
 
 const GroomBride = styled("p", {
-  fontSize: "3.5vh",
+  fontSize: "3.2vh",
   fontWeight: "bold",
   opacity: 0.9,
   marginBottom: 16,

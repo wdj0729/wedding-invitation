@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { styled } from "@stitches/react";
 
 const Content = styled("p", {
-  fontSize: "1.5vh",
+  fontSize: "2vh",
   lineHeight: 1.75,
   opacity: 0.75,
   marginBottom: 24,

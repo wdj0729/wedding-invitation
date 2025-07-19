@@ -13,7 +13,7 @@ const Wrapper = styled("div", {
 });
 
 const Title = styled("p", {
-  fontSize: "2vh",
+  fontSize: "2.4vh",
   fontWeight: "bold",
   opacity: 0.85,
   marginBottom: 0,
@@ -26,7 +26,7 @@ const GridWrapper = styled("div", {
   gridTemplateColumns: "repeat(4, 1fr)",
 
   "@sm": {
-    gridTemplateColumns: "repeat(2, 1fr)",
+    gridTemplateColumns: "repeat(1, 1fr)",
   },
 });
 
@@ -70,6 +70,10 @@ const images = [
   {
     original: "./assets/Gallery_Photo_10.jpg",
     thumbnail: "./assets/Gallery_Photo_10.jpg",
+  },
+  {
+    original: "./assets/Gallery_Photo_11.jpg",
+    thumbnail: "./assets/Gallery_Photo_11.jpg",
   },
 ];
 

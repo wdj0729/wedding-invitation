@@ -26,13 +26,8 @@
       },
       "father": {
         "name": "원재연",
-        "account_number": "○○은행 ***-***-******"
+        "account_number": "하나은행 919-910011-52307"
       }
     }
-  },
-  "kakaotalk": {
-    "api_token": "",
-    "wedding_invitation_url": "",
-    "share_image": ""
   }
 }

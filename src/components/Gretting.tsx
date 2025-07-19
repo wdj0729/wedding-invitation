@@ -16,14 +16,14 @@ const Wrapper = styled("div", {
 });
 
 const Title = styled("p", {
-  fontSize: "2vh",
+  fontSize: "2.4vh",
   fontWeight: "bold",
   opacity: 0.85,
   marginBottom: 0,
 });
 
 const Content = styled("div", {
-  fontSize: "1.75vh",
+  fontSize: "2vh",
   lineHeight: 1.75,
   opacity: 0.75,
   marginBottom: 16,
@@ -32,7 +32,7 @@ const Content = styled("div", {
 });
 
 const GroomBride = styled("p", {
-  fontSize: "1.75vh",
+  fontSize: "2vh",
   lineHeight: 1.75,
   opacity: 0.85,
   marginBottom: 0,
@@ -47,7 +47,7 @@ type GrettingProps = {
 export default function Gretting({ data }: GrettingProps) {
   return (
     <Wrapper>
-      <Divider style={{ marginTop: 0, marginBottom: 32 }} plain>
+      <Divider style={{ marginTop: 0, marginBottom: 24 }} plain>
         <Title>결혼합니다</Title>
       </Divider>
       <Content>
