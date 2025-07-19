@@ -36,9 +36,10 @@ export default function Home() {
           property="og:description"
           content="2025년 09월 14일 일요일 오후 14시 00분"
         />
+        {/* TODO: meta tag에 이미지 썸네일 넣기 */}
         <meta
           property="og:url"
-          content="https://hwang-and-weon.kr/wedding-invitation"
+          content="https://euimin-youkyung-wedding-invitation.vercel.app"
         />
         <meta name="theme-color" content="#BCAAA4" />
         <title>황의민❤원유경 결혼식에 초대합니다</title>
